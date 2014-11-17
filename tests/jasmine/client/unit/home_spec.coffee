@@ -1,4 +1,4 @@
-describe "home view integration test", ->
+describe "home view unit test", ->
   beforeEach ->
     @container = document.createElement("DIV")
     @var = new ReactiveVar(22)
