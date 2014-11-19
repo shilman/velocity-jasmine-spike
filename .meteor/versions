@@ -51,10 +51,11 @@ reactive-var@1.0.3
 reload@1.1.1
 retry@1.0.1
 routepolicy@1.0.2
-sanjo:jasmine@0.6.0-rc.2
+sanjo:jasmine@0.6.0
 sanjo:karma-chrome-launcher@0.1.5_1
+sanjo:karma-coffee-preprocessor@0.2.1
 sanjo:karma-jasmine@0.2.3
-sanjo:karma@0.12.24_1
+sanjo:karma@0.12.24_2
 session@1.0.4
 spacebars-compiler@1.0.3
 spacebars@1.0.3

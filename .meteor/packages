@@ -2,7 +2,6 @@ standard-app-packages
 coffeescript
 iron:router
 bootstrap
-velocity:html-reporter@0.3.0-rc.3
 reactive-var
-sanjo:jasmine@0.6.0-rc.2
-
+sanjo:jasmine@0.6.0
+velocity:html-reporter@0.3.0-rc.3
