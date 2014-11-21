@@ -1,0 +1,13 @@
+<template name="portfolio">
+  <div class="js-portfolio view portfolio">
+    <h1 class="js-name">{{portfolio.name}}</h1>
+    <h2 class="js-description">{{portfolio.description}}</h2>
+    <ul class="js-holdings">
+      {{#each portfolio.holdings}}
+        <li data-holding="{{symbol}}">
+          {{symbol}}
+        </li>
+      {{/each}}
+    </ul>
+  </div>
+</template>

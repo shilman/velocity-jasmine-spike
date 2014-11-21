@@ -1,0 +1,15 @@
+<template name="portfolioCards">
+  <div class="js-portfolio-cards view portfolio-cards">
+    <ul>
+      {{#each portfolios}}
+        {{> portfolioCard }}
+      {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="portfolioCard">
+  <li class="js-portfolio-card">
+    <h2>{{name}}</h2>
+  </li>
+</template>

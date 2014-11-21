@@ -1,0 +1,15 @@
+<template name="discussionCards">
+  <div class="js-discussion-cards view discussion-cards">
+    <ul>
+      {{#each discussions}}
+        {{> discussionCard }}
+      {{/each}}
+    </ul>
+  </div>
+</template>
+
+<template name="discussionCard">
+  <li class="js-discussion-card">
+    <h2>{{name}}</h2>
+  </li>
+</template>

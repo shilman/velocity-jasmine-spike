@@ -3,5 +3,6 @@ coffeescript
 iron:router
 bootstrap
 reactive-var
-sanjo:jasmine@0.6.0
-velocity:html-reporter@0.3.0-rc.3
+sanjo:jasmine
+velocity:html-reporter
+
