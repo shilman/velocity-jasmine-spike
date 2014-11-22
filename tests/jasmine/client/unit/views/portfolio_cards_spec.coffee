@@ -1,9 +1,8 @@
 describe "portfolioCards", ->
   beforeEach ->
-    @container = document.createElement("DIV")
     @portfolios = SampleData.portfolios(4)
-    @view = Blaze.renderWithData(Template.portfolioCards, {portfolios: @portfolios}, @container)
+    @view = Blaze.renderWithData(Template.portfolioCards, {portfolios: @portfolios}, @$fixture.get(0))
   it "should show", ->
-    $view = $(@container).find(".js-portfolio-cards")
-    expect($view).toExist()
+    $view = @$fixture.find(".js-portfolio-cards")
+    expect($view).toBeVisible()
     expect($view.find(".js-portfolio-card")).toHaveLength(4)

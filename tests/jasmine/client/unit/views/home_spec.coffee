@@ -1,8 +1,7 @@
 describe "home", ->
   beforeEach ->
-    @container = document.createElement("DIV")
-    @view = Blaze.renderWithData(Template.home, {}, @container)
+    @view = Blaze.renderWithData(Template.home, {}, @$fixture.get(0))
   it "should show", ->
-    $view = $(@container).find(".js-home")
-    expect($view).toExist()
+    $view = @$fixture.find(".js-home")
+    expect($view).toBeVisible()
     expect($view).toHaveText("home")

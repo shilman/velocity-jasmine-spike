@@ -1,8 +1,7 @@
 describe "browse", ->
   beforeEach ->
-    @container = document.createElement("DIV")
-    @view = Blaze.renderWithData(Template.browse, {}, @container)
+    @view = Blaze.renderWithData(Template.browse, {}, @$fixture.get(0))
   it "should show", ->
-    $view = $(@container).find(".js-browse")
-    expect($view).toExist()
+    $view = @$fixture.find(".js-browse")
+    expect($view).toBeVisible()
     expect($view).toHaveText("browse")
