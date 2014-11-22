@@ -3,9 +3,7 @@ describe "portfolio", ->
     @container = document.createElement("DIV")
     @portfolio = new Portfolio(name: "Name", description: "Description", holdings: [{symbol: "SYM"}])
     @portfolio._id = ClientPortfolios.insert(@portfolio)
-    Tracker.autorun(=>
-      @view = Blaze.renderWithData(Template.portfolio, {portfolio: ClientPortfolios.findOne(@portfolio._id)}, @container)
-    )
+    @view = Blaze.renderWithData(Template.portfolio, {id: @portfolio._id}, @container)
   afterEach ->
     ClientPortfolios.remove({})
   it "should show", ->
@@ -17,5 +15,5 @@ describe "portfolio", ->
     beforeEach (done) ->
       ClientPortfolios.update(@portfolio._id, $set: {name: "Edited"})
       Tracker.afterFlush(done)
-    it "should react", (done) ->
-      expect($(@container).find('.js-name').last()).toHaveText("Edited")
+    it "should react", ->
+      expect($(@container).find('.js-name')).toHaveText("Edited")
