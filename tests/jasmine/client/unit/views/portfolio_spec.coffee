@@ -11,9 +11,9 @@ describe "portfolio", ->
     expect($view.find('.js-name')).toHaveText("Name")
     expect($view.find('.js-description')).toHaveText("Description")
     expect($view.find('[data-holding]')).toHaveLength(1)
-  describe "reactivity", ->
-    beforeEach (done) ->
-      ClientPortfolios.update(@portfolio._id, $set: {name: "Edited"})
-      Tracker.afterFlush(done)
-    it "should react", ->
+  it "should react", (done) ->
+    ClientPortfolios.update(@portfolio._id, $set: {name: "Edited"})
+    Tracker.afterFlush(=>
       expect($(@container).find('.js-name')).toHaveText("Edited")
+      done()
+    )
