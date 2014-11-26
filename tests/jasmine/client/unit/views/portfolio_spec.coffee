@@ -2,7 +2,7 @@ describe "portfolio", ->
   beforeEach ->
     @portfolio = new Portfolio(name: "Name", description: "Description", holdings: [{symbol: "SYM"}])
     @portfolio._id = ClientPortfolios.insert(@portfolio)
-    @view = Blaze.renderWithData(Template.portfolio, {id: @portfolio._id}, @$fixture.get(0))
+    @view = Blaze.renderWithData(Template.portfolio, {portfolio: -> ClientPortfolios.findOne(portfolio._id)}, @$fixture.get(0))
   afterEach ->
     ClientPortfolios.remove({})
   it "should show", ->
