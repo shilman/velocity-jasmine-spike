@@ -2,7 +2,8 @@ describe "portfolio", ->
   beforeEach ->
     @portfolio = new Portfolio(name: "Name", description: "Description", holdings: [{symbol: "SYM"}])
     @portfolio._id = ClientPortfolios.insert(@portfolio)
-    @view = Blaze.renderWithData(Template.portfolio, {portfolio: -> ClientPortfolios.findOne(portfolio._id)}, @$fixture.get(0))
+    self = this
+    @view = Blaze.renderWithData(Template.portfolio, {portfolio: -> ClientPortfolios.findOne(self.portfolio._id)}, @$fixture.get(0))
   afterEach ->
     ClientPortfolios.remove({})
   it "should show", ->
@@ -17,3 +18,5 @@ describe "portfolio", ->
       expect(@$fixture.find('.js-name')).toHaveText("Edited")
       done()
     )
+  # it "should fail", ->
+  #   expect(true).toBe(false)
