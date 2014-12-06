@@ -25,4 +25,5 @@ Router.map(->
     template: "search"
     data: -> {}
   )
+  @route("simpleYield")
 )

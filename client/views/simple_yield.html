@@ -1,9 +1,11 @@
 <template name="simpleYield">
   <div class="js-simple-yield view simple-yield">
     simpleYield
-    {{> yield "fooContents"}}
+    <p>
+      {{> yield "foo"}}
+    </p>
     {{> contentFor region="foo" template="fooContents"}}
   </div>
 </template>
 
-<template name="fooContents">foo</template>
+<template name="fooContents">foo contents</template>
